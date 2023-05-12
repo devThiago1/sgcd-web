@@ -27,6 +27,13 @@ export class userRegister{
 
         try{
             const dataVerf = dataVerification(newUser);
+
+            const valid_number = await user_info_Repository.findOneBy({number_user: newUser.number_user});
+
+                if(!valid_number){
+                return res.status(204).json({message:'Número Já Cadastrado!'});
+                }    
+
                 if(!dataVerf){
                     return res.status(204).json({message: 'Campos Inválidos'});
                 } else {
