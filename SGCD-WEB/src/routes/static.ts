@@ -6,6 +6,11 @@ import path from "path";
 const staticRoutes = Router();
 
 
+
+staticRoutes.get('/public/css/error.css', (req:Request, res:Response) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'src', 'public', 'css' ,'error.css'));
+});
+
 staticRoutes.get('/public/css/signUp.css', (req:Request, res:Response) => {
     res.sendFile(path.join(__dirname, '..', '..', 'src', 'public', 'css' ,'signUp.css'));
 });

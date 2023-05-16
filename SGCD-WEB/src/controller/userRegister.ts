@@ -29,13 +29,14 @@ export class userRegister{
             const dataVerf = dataVerification(newUser);
 
             const valid_number = await user_info_Repository.findOneBy({number_user: newUser.number_user});
+            console.log(valid_number);
 
-                if(!valid_number){
-                return res.status(204).json({message:'Número Já Cadastrado!'});
+                if(valid_number != null){
+                return res.status(400).redirect('/ErrorExistData');
                 }    
 
                 if(!dataVerf){
-                    return res.status(204).json({message: 'Campos Inválidos'});
+                    return res.status(400).redirect('/ErrorInvalidData');
                 } else {
 
                     const hashPassword = await bcrypt.hash(newUser.password_user, 10);
