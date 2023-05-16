@@ -16,7 +16,7 @@ export class User{
     @Column("varchar", { length: 30})
     number_user: string;
 
-    @Column("varchar", { length: 20})
+    @Column("varchar", { length: 60})
     cpf_user: string;
 
     @Column({type: "text"})

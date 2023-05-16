@@ -22,7 +22,7 @@ export class Adress{
     @Column({type: "text"})
     complemento_user: string;
 
-    @Column("varchar", { length: 11})
+    @Column("varchar", { length: 15})
     cep_user: string;
 
     @Column("varchar", { length: 7})
