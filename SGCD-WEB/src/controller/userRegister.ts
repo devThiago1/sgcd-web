@@ -35,9 +35,9 @@ export class userRegister{
                 return res.status(400).redirect('/ErrorExistData');
                 }    
 
-                if(!dataVerf){
-                    return res.status(400).redirect('/ErrorInvalidData');
-                } else {
+            if(!dataVerf){
+                return res.status(400).redirect('/ErrorInvalid');
+             } else {
 
                     const hashPassword = await bcrypt.hash(newUser.password_user, 10);
                     const hashCpf =  await bcrypt.hash(newUser.cpf_user, 10);

@@ -4,13 +4,13 @@ import * as Joi from 'joi';
 
 function dataVerification(newUser: any) {
     const formSchema = Joi.object().keys({
-      first_name_user: Joi.string().alphanum().min(3).max(30).required(),
-      last_name_user: Joi.string().alphanum().min(3).max(30).required(),
+      first_name_user: Joi.string().min(3).max(30).required(),
+      last_name_user: Joi.string().min(3).max(30).required(),
       cpf_user: Joi.string().required(),
       email_user: Joi.string().email().required(),
       password_user: Joi.string().required().empty(''),
       number_user: Joi.string().required().empty(''),
-      bairro_user: Joi.string().alphanum().min(3).max(30).required(),
+      bairro_user: Joi.string().min(3).max(30).required(),
       cep_user: Joi.string().required(),
       complemento_user: Joi.string().optional().empty(''),
       number_adress_user: Joi.string().required().empty(''),

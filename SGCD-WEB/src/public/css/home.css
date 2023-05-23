@@ -113,7 +113,6 @@ main{
 }
 
 .container-obj{
-    
     padding: 100px;
     background-color: #0477BF;
 }
@@ -137,6 +136,8 @@ main{
     cursor: pointer;
     margin-top: 4%;
     font-size: 200%;
+    margin-right: 40%;
+    margin-left: 40%;
 }
 
 .desc-link{
@@ -164,7 +165,13 @@ main{
     justify-content: center;   
 }
 
-@media(max-width:768px){
+@media(max-width: 1070px){
+    .container-image{
+        display: none;
+    }
+}
+
+@media(max-width:910px){
     .container-image{
         display: none;
     }
@@ -214,7 +221,7 @@ main{
         font-weight: bold;
     }
     .container-info{
-        padding: 55px;
+        padding: 50px;
     }
     .container-logo{
         display: flex;
