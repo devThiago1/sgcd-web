@@ -13,8 +13,6 @@ export class userRegister{
         const newUser = {
         first_name_user: req.body.first_name_user,
         last_name_user:  req.body.last_name_user,
-        cpf_user: req.body.cpf_user,
-        email_user: req.body.email_user,
         password_user: req.body.password_user,
         number_user: req.body.number_user,
         bairro_user: req.body.bairro_user,
@@ -40,7 +38,6 @@ export class userRegister{
              } else {
 
                     const hashPassword = await bcrypt.hash(newUser.password_user, 10);
-                    const hashCpf =  await bcrypt.hash(newUser.cpf_user, 10);
 
                     const Address = new Adress();
                     Address.bairro_user = newUser.bairro_user;
@@ -53,9 +50,7 @@ export class userRegister{
                     const user = new User();
                     user.first_name_user = newUser.first_name_user;
                     user.last_name_user = newUser.last_name_user;
-                    user.email_user = newUser.email_user;
                     user.password_user = hashPassword;
-                    user.cpf_user = hashCpf;
                     user.number_user = newUser.number_user;
                     user.Adress = Address;
                     await user_info_Repository.manager.save(user);
