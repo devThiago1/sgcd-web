@@ -31,6 +31,10 @@ staticRoutes.get('/public/background.png', (req:Request, res:Response) => {
     res.sendFile(path.join(__dirname, '..', '..', 'src', 'public' ,'background.png'));
 });
 
+staticRoutes.get('/public/prototipoofc2.png', (req:Request, res:Response) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'src', 'public' ,'prototipoofc2.png'));
+});
+
 staticRoutes.get('/public/example.png', (req:Request, res:Response) => {
     res.sendFile(path.join(__dirname, '..', '..', 'src', 'public' ,'example.png'));
 });
